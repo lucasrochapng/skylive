@@ -1,0 +1,60 @@
+body { margin:0; overflow:hidden; font-family:Arial; color:white; }
+
+.sky { position:absolute; width:100%; height:100%; }
+
+.card {
+  position:absolute;
+  top:50%; left:50%; transform:translate(-50%,-50%);
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(15px);
+  padding:30px 50px;
+  border-radius:20px;
+  z-index:10;
+}
+
+#clock { font-size:3rem; }
+
+#sun, #moon {
+  position:absolute;
+  width:120px;
+  z-index:5;
+}
+
+.star {
+  position:absolute;
+  background:white;
+  border-radius:50%;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {opacity:0.2;} to {opacity:1;}
+}
+
+.cloud {
+  position:absolute;
+  animation: cloudMove linear infinite;
+}
+
+@keyframes cloudMove {
+  from { transform:translateX(-200px);} 
+  to { transform:translateX(110vw);} 
+}
+
+.drop {
+  position:absolute;
+  width:2px; height:15px;
+  background:rgba(255,255,255,0.5);
+  animation: rainFall linear infinite;
+}
+
+@keyframes rainFall {
+  to { transform:translateY(100vh);} 
+}
+
+#lightning {
+  position:absolute;
+  width:100%; height:100%;
+  background:white;
+  opacity:0;
+}

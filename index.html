@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador de Céu em Tempo Real | Clima, Astronomia e UI Dinâmica</title>
+<meta name="description" content="Projeto de front-end que simula o céu em tempo real com base em clima, localização e astronomia. Inclui fases da lua, nascer do sol real, clima dinâmico e animações avançadas.">
+<meta name="keywords" content="javascript, clima em tempo real, api, frontend, portfólio, céu dinâmico, animação web, weather app, astronomy UI">
+<meta name="author" content="Lucas Rocha">
+<meta property="og:title" content="Simulador de Céu em Tempo Real">
+<meta property="og:description" content="Sistema visual dinâmico com clima, localização e astronomia em tempo real.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/preview.png">
+<link rel="icon" href="img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="sky" id="sky"></div>
+  <div class="sky-glow"></div>
+
+  <div id="stars"></div>
+  <div id="clouds"></div>
+  <div id="rain"></div>
+  <div id="lightning"></div>
+
+  <img src="img/sun.png" id="sun">
+  <img src="img/moon-phases/moon1.png" id="moon">
+
+  <div class="card">
+    <div id="city"></div>
+    <div id="clock"></div>
+    <div id="weather"></div>
+    <div id="temp"></div>
+  </div>
+
+  <audio id="rainSound" src="sounds/rain.mp3" loop></audio>
+  <audio id="thunderSound" src="sounds/thunder.mp3"></audio>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
