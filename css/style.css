@@ -58,3 +58,25 @@ body { margin:0; overflow:hidden; font-family:Arial; color:white; }
   background:white;
   opacity:0;
 }
+
+/* teste */
+.spaceship {
+  position: absolute;
+  width: 300px;
+  left: -150px;
+  z-index: 6;
+
+  animation: flyAcross 10s linear forwards,
+             floatShip 2s ease-in-out infinite;
+}
+
+@keyframes flyAcross {
+  from { left: -150px; }
+  to { left: 110vw; }
+}
+
+/* @keyframes floatShip {
+  0% { transform: translateY(0px) rotate(-5deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(-5deg); }
+} */

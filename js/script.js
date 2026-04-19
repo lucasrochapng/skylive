@@ -146,6 +146,33 @@ function generateClouds(){
   }
 }
 
+// teste de et ============================
+
+function spawnSpaceship(){
+  const ship = document.createElement('img');
+  ship.src = 'img/nyan-cat.gif'; // seu gif aqui
+  ship.className = 'spaceship';
+
+  // posição inicial
+  ship.style.top = (20 + Math.random() * 40) + 'vh';
+
+  document.body.appendChild(ship);
+
+  const sound = document.getElementById('nyanSound');
+  sound.currentTime = 0;
+  sound.play();
+
+  // remove depois que sair da tela
+  setTimeout(()=>{
+    ship.remove();
+    sound.pause();
+    sound.currentTime = 0;
+  }, 12000);
+
+}
+
+// teste de et =======================================
+
 function updateClock(){
   const now=new Date();
   document.getElementById('clock').innerText=new Intl.DateTimeFormat('pt-BR',{timeZone:'America/Sao_Paulo',hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(now);
@@ -154,6 +181,26 @@ function updateClock(){
   updateSky(hour);
   updateSunMoon(hour);
   updateMoonPhase();
+
+  // teste de animação
+  function isNight(hour){
+    return !(hour >= sunrise && hour <= sunset);
+  }
+
+  function checkSpaceshipEvent(){
+    const now = new Date();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const hour = getHourFloat();
+
+    if(seconds === 0 && isNight(hour)){
+      spawnSpaceship();
+    }
+
+  }
+
+  checkSpaceshipEvent();
+
 }
 
 setInterval(updateClock,1000);
